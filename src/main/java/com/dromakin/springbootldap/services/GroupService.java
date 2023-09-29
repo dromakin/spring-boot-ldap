@@ -13,19 +13,21 @@
 package com.dromakin.springbootldap.services;
 
 import com.dromakin.springbootldap.models.Group;
-import com.dromakin.springbootldap.models.Permission;
 import com.dromakin.springbootldap.models.Person;
+import com.dromakin.springbootldap.models.Service;
 
 import java.util.List;
 
-public interface UserGroupService {
+public interface GroupService {
 
     // find
-    List<Person> getUsersByGroup(String group);
-    boolean groupExists(String group);
-    List<Group> getListOfGroups();
-    Permission getGroupPermissionByNameGroup(String group);
-    Permission getGroupPermissionByEmailUser(String email);
+    Group getGroupByPerson(Person person);
+
+    Group getGroupByService(Service service);
+
+    List<Group> getAllGroups();
+
+    Group findBy(String attr, String value);
 
     // create
 

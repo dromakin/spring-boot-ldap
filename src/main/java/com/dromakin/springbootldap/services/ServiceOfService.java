@@ -12,13 +12,14 @@
  */
 package com.dromakin.springbootldap.services;
 
-import com.dromakin.springbootldap.models.Permission;
 import com.dromakin.springbootldap.models.Service;
+
+import java.util.List;
 
 public interface ServiceOfService {
 
     boolean serviceNameExist(String name);
     Service getServiceByName(String name);
-    Permission getServicePermissionByName(String name);
+    List<Service> getServices();
 
 }

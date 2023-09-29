@@ -24,7 +24,7 @@ import java.util.Objects;
 
 @Entry(
         base = "ou=users",
-        objectClasses = {"top", "person"}
+        objectClasses = {"top", "person", "organizationalPerson", "inetOrgPerson"}
 )
 @NoArgsConstructor
 @Data
@@ -51,12 +51,15 @@ public class Person {
     @Attribute(name = "userpassword")
     private String password;
 
+    @Attribute(name = "description")
+    private String role;
+
     @DnAttribute(value = "ou")
     @Transient
     private String group; // users or services
     // group='users'
 
-    public Person(String uid, String fullName, String lastName, String mail, String password) {
+    public Person(String uid, String fullName, String lastName, String mail, String password, String role) {
         this.uid = uid;
         this.dn = LdapNameBuilder.newInstance(BASE_DN)
                 .add("ou", "users")
@@ -66,29 +69,12 @@ public class Person {
         this.lastName = lastName;
         this.mail = mail;
         this.password = password;
+        this.group = "users";
+        this.role = role;
     }
 
-    public Person(String fullName, String lastName, String mail, String password) {
-        this(
-                fullName.toLowerCase().replaceAll(lastName, "").replaceAll("\\s+", ""),
-                fullName,
-                lastName,
-                mail,
-                password
-        );
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(uid, person.uid) && Objects.equals(fullName, person.fullName) && Objects.equals(lastName, person.lastName) && Objects.equals(mail, person.mail) && Objects.equals(password, person.password) && Objects.equals(group, person.group);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(uid, fullName, lastName, mail, password, group);
+    public boolean isEmpty() {
+        return dn == null || uid == null || fullName == null || lastName == null || mail == null || password == null || group == null || role == null;
     }
 
     /*

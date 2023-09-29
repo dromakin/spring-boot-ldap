@@ -12,7 +12,7 @@
  */
 package com.dromakin.springbootldap.mapper;
 
-import com.dromakin.springbootldap.models.Person;
+import com.dromakin.springbootldap.models.Service;
 import org.springframework.ldap.core.AttributesMapper;
 
 import javax.naming.NamingException;
@@ -21,15 +21,11 @@ import javax.naming.directory.Attributes;
 /**
  * Custom person attributes mapper, maps the attributes to the person POJO
  */
-public class PersonAttributesMapper implements AttributesMapper<Person> {
+public class ServiceAttributesMapper implements AttributesMapper<Service> {
     @Override
-    public Person mapFromAttributes(Attributes attributes) throws NamingException {
-        return new Person(
-                String.valueOf(attributes.get("uid").get()),
+    public Service mapFromAttributes(Attributes attributes) throws NamingException {
+        return new Service(
                 String.valueOf(attributes.get("cn").get()),
-                String.valueOf(attributes.get("sn").get()),
-                String.valueOf(attributes.get("mail").get()),
-                String.valueOf(attributes.get("userpassword").get()),
                 String.valueOf(attributes.get("description").get())
         );
     }

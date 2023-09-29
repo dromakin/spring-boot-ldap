@@ -1,36 +1,31 @@
 /*
- * File:     PersonService
+ * File:     PermissionService
  * Package:  com.dromakin.springbootldap.services
  * Project:  spring-boot-ldap
  *
- * Created by dromakin as 24.09.2023
+ * Created by dromakin as 26.09.2023
  *
  * author - dromakin
  * maintainer - dromakin
- * version - 2023.09.24
+ * version - 2023.09.26
  * copyright - ORGANIZATION_NAME Inc. 2023
  */
 package com.dromakin.springbootldap.services;
 
 import com.dromakin.springbootldap.models.Group;
 import com.dromakin.springbootldap.models.Permission;
+import com.dromakin.springbootldap.models.Person;
 import com.dromakin.springbootldap.models.Service;
 
+public interface PermissionService {
 
-import java.util.List;
+    // person
+    Permission getPermissionByPerson(Person person);
 
-public interface ServiceGroupOfService {
+    // service
+    Permission getPermissionByService(Service service);
 
-    // find
-    List<Service> getServicesByGroup(String group);
-    boolean groupExists(String group);
-    List<Group> getListOfGroups();
-    Permission getGroupPermissionByName(String group);
-
-    // create
-
-    // update
-
-    // delete
+    // group
+    Permission getPermissionByGroup(Group group);
 
 }

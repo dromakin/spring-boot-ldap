@@ -13,6 +13,7 @@
 package com.dromakin.springbootldap.models;
 
 public enum Permission {
+    NONE,
     READ,
     WRITE,
     ALL

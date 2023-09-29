@@ -12,7 +12,6 @@
  */
 package com.dromakin.springbootldap.services;
 
-import com.dromakin.springbootldap.models.Permission;
 import com.dromakin.springbootldap.models.Person;
 
 import java.util.List;
@@ -21,10 +20,10 @@ public interface PersonService {
 
     // find
     Person findByEmail(String email);
+    Person findByUid(String uid);
     List<Person> findByName(String name);
     List<Person> findByLastName(String lastName);
     Person findByFullName(String cn);
-    Permission getPersonPermissionByEmailPerson(String email);
 
     // create
 
