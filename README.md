@@ -5,6 +5,7 @@
 
 ## Application
 Endpoints:
+
 ![1.png](docs%2F1.png)
 
 ## Requirements
