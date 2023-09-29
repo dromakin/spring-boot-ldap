@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "2efa8cb9-fc5c-4e23-a49c-7bcf0cc90d99",
+		"name": "spring-boot-ldap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9165319"
+	},
+	"item": [
+		{
+			"name": "person",
+			"item": [
+				{
+					"name": "/person",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "charlie",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/api/person",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"api",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/person/{email}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "charlie",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/api/person/email?email=charliebrown@example.com",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"email"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "charliebrown@example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/person/{full name}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "charlie",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/api/person/fullName?fullName=Charlie Brown",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"fullName"
+							],
+							"query": [
+								{
+									"key": "fullName",
+									"value": "Charlie Brown"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/person/{name}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "charlie",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/api/person/name?name=Charlie",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Charlie"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/person/{lastname}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "charlie",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/api/person/lastName?lastName=Brown",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"api",
+								"person",
+								"lastName"
+							],
+							"query": [
+								{
+									"key": "lastName",
+									"value": "Brown"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "group",
+			"item": [
+				{
+					"name": "/group/name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "charlie",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/api/group/name?name=user",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"api",
+								"group",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "user"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/group/all",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "charlie",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/api/group/all",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"api",
+								"group",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service",
+			"item": [
+				{
+					"name": "/service/name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "charlie",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/api/service/name?name=Dashboard",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Dashboard"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/service/all",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "charlie",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/api/service/all",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "private",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "charlie",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"private"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server_url",
+			"value": "server_url",
+			"type": "string"
+		}
+	]
+}
