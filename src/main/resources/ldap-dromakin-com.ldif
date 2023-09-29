@@ -1,0 +1,164 @@
+dn: ou=users,dc=example,dc=com
+objectclass: organizationalUnit
+objectclass: top
+ou: users
+
+dn: ou=services,dc=example,dc=com
+objectclass: organizationalUnit
+objectclass: top
+ou: services
+
+dn: ou=groups,dc=example,dc=com
+objectclass: organizationalUnit
+objectclass: top
+ou: groups
+
+
+# users
+# 1
+dn: uid=alice,ou=users,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Alice Johnson
+sn: Johnson
+uid: alice
+mail: alice@example.com
+userpassword: {MD5}ICy5YqxZB1uWSwcVLSNLcA==
+description: user
+
+# 2
+dn: uid=bob,ou=users,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Bob Smith
+sn: Smith
+uid: bob
+mail: bob@example.com
+userpassword: {MD5}ICy5YqxZB1uWSwcVLSNLcA==
+description: developer
+
+# 3
+dn: uid=charlie,ou=users,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Charlie Brown
+sn: Brown
+uid: charlie
+mail: charliebrown@example.com
+userpassword: {MD5}ICy5YqxZB1uWSwcVLSNLcA==
+description: cto
+
+# 4
+dn: uid=diana,ou=users,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Diana Martinez
+sn: Martinez
+uid: diana
+mail: matinezd@example.com
+userpassword: {MD5}ICy5YqxZB1uWSwcVLSNLcA==
+description: developer
+
+# 5
+dn: uid=mcuban,ou=users,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Mark Cuban
+sn: Cuban
+mail: mcuban@example.com
+userpassword: {MD5}ICy5YqxZB1uWSwcVLSNLcA==
+description: manager
+
+# Groups
+# read
+dn: cn=user,ou=groups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: user
+member: uid=bob,ou=users,dc=example,dc=com
+member: uid=diana,ou=users,dc=example,dc=com
+
+# write
+dn: cn=editor,ou=groups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: editor
+member: uid=mcuban,ou=users,dc=example,dc=com
+
+# read + write
+dn: cn=administrator,ou=groups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: administrator
+member: uid=charlie,ou=users,dc=example,dc=com
+
+# service
+# 1
+dn: cn=broker,ou=services,dc=example,dc=com
+objectClass: top
+objectClass: organizationalRole
+cn: Broker
+description: Service for message processing
+
+# 2
+dn: cn=prometheus,ou=services,dc=example,dc=com
+objectClass: top
+objectClass: organizationalRole
+cn: Prometheus
+description: Prometheus is an open-source systems monitoring and alerting toolkit.
+
+# 3
+dn: cn=frontend,ou=services,dc=example,dc=com
+objectClass: top
+objectClass: organizationalRole
+cn: Frontend
+description: Frontend
+
+# 4
+dn: cn=service,ou=services,dc=example,dc=com
+objectClass: top
+objectClass: organizationalRole
+cn: Service
+description: Company service
+
+#5
+dn: cn=dashboard,ou=services,dc=example,dc=com
+objectClass: top
+objectClass: organizationalRole
+cn: Dashboard
+description: Dashboard for monitoring REST API.
+
+# Groups
+# read
+dn: cn=reader,ou=groups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: reader
+member: cn=dashboard,ou=services,dc=example,dc=com
+member: cn=prometheus,ou=services,dc=example,dc=com
+
+# write
+dn: cn=writer,ou=groups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: writer
+member: cn=broker,ou=services,dc=example,dc=com
+
+# read + write
+# High Privilege Services
+dn: cn=root,ou=groups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: root
+member: cn=service,ou=services,dc=example,dc=com
+member: cn=frontend,ou=services,dc=example,dc=com
