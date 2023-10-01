@@ -1,4 +1,4 @@
-package com.dromakin.springbootldap.ldap.client;
+package com.dromakin.springbootldap.ldap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;

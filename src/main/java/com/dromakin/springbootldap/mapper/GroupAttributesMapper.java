@@ -12,16 +12,14 @@
  */
 package com.dromakin.springbootldap.mapper;
 
-import com.dromakin.springbootldap.models.Group;
+import com.dromakin.springbootldap.models.ldap.Group;
 import org.springframework.ldap.core.AttributesMapper;
-import org.springframework.ldap.core.LdapAttribute;
 
 import javax.naming.Name;
 import javax.naming.NamingException;
 import javax.naming.directory.Attributes;
 import javax.naming.ldap.LdapName;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**

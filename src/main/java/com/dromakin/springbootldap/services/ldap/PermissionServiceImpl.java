@@ -10,11 +10,11 @@
  * version - 2023.09.26
  * copyright - ORGANIZATION_NAME Inc. 2023
  */
-package com.dromakin.springbootldap.services;
+package com.dromakin.springbootldap.services.ldap;
 
-import com.dromakin.springbootldap.models.Group;
-import com.dromakin.springbootldap.models.Permission;
-import com.dromakin.springbootldap.models.Person;
+import com.dromakin.springbootldap.models.ldap.Group;
+import com.dromakin.springbootldap.models.ldap.Permission;
+import com.dromakin.springbootldap.models.ldap.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,7 +44,7 @@ public class PermissionServiceImpl implements PermissionService {
     }
 
     @Override
-    public Permission getPermissionByService(com.dromakin.springbootldap.models.Service service) {
+    public Permission getPermissionByService(com.dromakin.springbootldap.models.ldap.Service service) {
         return getPermissionByGroup(groupService.getGroupByService(service));
     }
 

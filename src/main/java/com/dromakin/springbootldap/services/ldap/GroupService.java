@@ -10,11 +10,11 @@
  * version - 2023.09.24
  * copyright - ORGANIZATION_NAME Inc. 2023
  */
-package com.dromakin.springbootldap.services;
+package com.dromakin.springbootldap.services.ldap;
 
-import com.dromakin.springbootldap.models.Group;
-import com.dromakin.springbootldap.models.Person;
-import com.dromakin.springbootldap.models.Service;
+import com.dromakin.springbootldap.models.ldap.Group;
+import com.dromakin.springbootldap.models.ldap.Person;
+import com.dromakin.springbootldap.models.ldap.Service;
 
 import java.util.List;
 

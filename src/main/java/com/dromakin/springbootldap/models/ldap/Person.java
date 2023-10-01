@@ -10,7 +10,7 @@
  * version - 2023.09.24
  * copyright - ORGANIZATION_NAME Inc. 2023
  */
-package com.dromakin.springbootldap.models;
+package com.dromakin.springbootldap.models.ldap;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +19,6 @@ import org.springframework.ldap.odm.annotations.*;
 import org.springframework.ldap.support.LdapNameBuilder;
 
 import javax.naming.Name;
-import java.util.Objects;
 
 
 @Entry(

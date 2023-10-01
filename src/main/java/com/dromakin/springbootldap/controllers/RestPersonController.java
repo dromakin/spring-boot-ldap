@@ -2,12 +2,12 @@ package com.dromakin.springbootldap.controllers;
 
 import com.dromakin.springbootldap.config.SwaggerConfig;
 import com.dromakin.springbootldap.dto.PersonDTO;
-import com.dromakin.springbootldap.models.Group;
-import com.dromakin.springbootldap.models.Permission;
-import com.dromakin.springbootldap.models.Person;
-import com.dromakin.springbootldap.services.GroupService;
-import com.dromakin.springbootldap.services.PermissionService;
-import com.dromakin.springbootldap.services.PersonService;
+import com.dromakin.springbootldap.models.ldap.Group;
+import com.dromakin.springbootldap.models.ldap.Permission;
+import com.dromakin.springbootldap.models.ldap.Person;
+import com.dromakin.springbootldap.services.ldap.GroupService;
+import com.dromakin.springbootldap.services.ldap.PermissionService;
+import com.dromakin.springbootldap.services.ldap.PersonService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -42,7 +42,7 @@ public class RestPersonController {
 
     @Operation(
             summary = "Get current Person",
-            security = {@SecurityRequirement(name = SwaggerConfig.BASIC_AUTH_SECURITY_SCHEME)},
+            security = {@SecurityRequirement(name = SwaggerConfig.AUTH_SECURITY_SCHEME)},
             responses = {
                     @ApiResponse(description = "The current Person",
                             content = @Content(mediaType = "application/json",
@@ -71,7 +71,7 @@ public class RestPersonController {
 
     @Operation(
             summary = "Get Person by email",
-            security = {@SecurityRequirement(name = SwaggerConfig.BASIC_AUTH_SECURITY_SCHEME)},
+            security = {@SecurityRequirement(name = SwaggerConfig.AUTH_SECURITY_SCHEME)},
             responses = {
                     @ApiResponse(description = "The person",
                             content = @Content(mediaType = "application/json",
@@ -115,7 +115,7 @@ public class RestPersonController {
 
     @Operation(
             summary = "Get Person by full name",
-            security = {@SecurityRequirement(name = SwaggerConfig.BASIC_AUTH_SECURITY_SCHEME)},
+            security = {@SecurityRequirement(name = SwaggerConfig.AUTH_SECURITY_SCHEME)},
             responses = {
                     @ApiResponse(description = "The person",
                             content = @Content(mediaType = "application/json",
@@ -154,7 +154,7 @@ public class RestPersonController {
 
     @Operation(
             summary = "Get persons by name",
-            security = {@SecurityRequirement(name = SwaggerConfig.BASIC_AUTH_SECURITY_SCHEME)},
+            security = {@SecurityRequirement(name = SwaggerConfig.AUTH_SECURITY_SCHEME)},
             responses = {
                     @ApiResponse(description = "Persons by name",
                             content = @Content(mediaType = "application/json",
@@ -199,7 +199,7 @@ public class RestPersonController {
 
     @Operation(
             summary = "Get persons by last name",
-            security = {@SecurityRequirement(name = SwaggerConfig.BASIC_AUTH_SECURITY_SCHEME)},
+            security = {@SecurityRequirement(name = SwaggerConfig.AUTH_SECURITY_SCHEME)},
             responses = {
                     @ApiResponse(description = "Persons by last name",
                             content = @Content(mediaType = "application/json",

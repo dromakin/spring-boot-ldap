@@ -12,7 +12,7 @@
  */
 package com.dromakin.springbootldap.mapper;
 
-import com.dromakin.springbootldap.models.Person;
+import com.dromakin.springbootldap.models.ldap.Person;
 import org.springframework.ldap.core.AttributesMapper;
 
 import javax.naming.NamingException;

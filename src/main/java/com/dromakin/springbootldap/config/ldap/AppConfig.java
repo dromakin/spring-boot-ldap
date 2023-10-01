@@ -1,6 +1,6 @@
-package com.dromakin.springbootldap.ldap.javaconfig;
+package com.dromakin.springbootldap.config.ldap;
 
-import com.dromakin.springbootldap.ldap.client.LdapClient;
+import com.dromakin.springbootldap.ldap.LdapClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;

@@ -10,10 +10,10 @@
  * version - 2023.09.24
  * copyright - ORGANIZATION_NAME Inc. 2023
  */
-package com.dromakin.springbootldap.services;
+package com.dromakin.springbootldap.services.ldap;
 
 import com.dromakin.springbootldap.mapper.ServiceAttributesMapper;
-import com.dromakin.springbootldap.models.Service;
+import com.dromakin.springbootldap.models.ldap.Service;
 import lombok.AllArgsConstructor;
 import org.springframework.ldap.core.LdapTemplate;
 

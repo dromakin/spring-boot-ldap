@@ -14,14 +14,14 @@ package com.dromakin.springbootldap.controllers;
 
 import com.dromakin.springbootldap.config.SwaggerConfig;
 import com.dromakin.springbootldap.dto.ServiceDTO;
-import com.dromakin.springbootldap.models.Group;
-import com.dromakin.springbootldap.models.Permission;
-import com.dromakin.springbootldap.models.Person;
-import com.dromakin.springbootldap.models.Service;
-import com.dromakin.springbootldap.services.GroupService;
-import com.dromakin.springbootldap.services.PermissionService;
-import com.dromakin.springbootldap.services.PersonService;
-import com.dromakin.springbootldap.services.ServiceOfService;
+import com.dromakin.springbootldap.models.ldap.Group;
+import com.dromakin.springbootldap.models.ldap.Permission;
+import com.dromakin.springbootldap.models.ldap.Person;
+import com.dromakin.springbootldap.models.ldap.Service;
+import com.dromakin.springbootldap.services.ldap.GroupService;
+import com.dromakin.springbootldap.services.ldap.PermissionService;
+import com.dromakin.springbootldap.services.ldap.PersonService;
+import com.dromakin.springbootldap.services.ldap.ServiceOfService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -50,7 +50,7 @@ public class RestServiceController {
 
     @Operation(
             summary = "Get service",
-            security = {@SecurityRequirement(name = SwaggerConfig.BASIC_AUTH_SECURITY_SCHEME)},
+            security = {@SecurityRequirement(name = SwaggerConfig.AUTH_SECURITY_SCHEME)},
             responses = {
                     @ApiResponse(description = "The service",
                             content = @Content(mediaType = "application/json",
@@ -93,7 +93,7 @@ public class RestServiceController {
 
     @Operation(
             summary = "Get services",
-            security = {@SecurityRequirement(name = SwaggerConfig.BASIC_AUTH_SECURITY_SCHEME)},
+            security = {@SecurityRequirement(name = SwaggerConfig.AUTH_SECURITY_SCHEME)},
             responses = {
                     @ApiResponse(description = "Services",
                             content = @Content(mediaType = "application/json",

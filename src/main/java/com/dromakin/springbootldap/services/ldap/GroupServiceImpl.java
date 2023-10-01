@@ -10,11 +10,11 @@
  * version - 2023.09.24
  * copyright - ORGANIZATION_NAME Inc. 2023
  */
-package com.dromakin.springbootldap.services;
+package com.dromakin.springbootldap.services.ldap;
 
 import com.dromakin.springbootldap.mapper.GroupAttributesMapper;
-import com.dromakin.springbootldap.models.Group;
-import com.dromakin.springbootldap.models.Person;
+import com.dromakin.springbootldap.models.ldap.Group;
+import com.dromakin.springbootldap.models.ldap.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.stereotype.Service;
@@ -96,7 +96,7 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Group getGroupByService(com.dromakin.springbootldap.models.Service service) {
+    public Group getGroupByService(com.dromakin.springbootldap.models.ldap.Service service) {
         if (serviceGroups.isEmpty()) {
             initServiceGroups();
         }

@@ -10,12 +10,11 @@
  * version - 2023.09.25
  * copyright - ORGANIZATION_NAME Inc. 2023
  */
-package com.dromakin.springbootldap.services;
+package com.dromakin.springbootldap.services.ldap;
 
 import com.dromakin.springbootldap.mapper.PersonAttributesMapper;
-import com.dromakin.springbootldap.models.Person;
+import com.dromakin.springbootldap.models.ldap.Person;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.query.LdapQuery;
 import org.springframework.stereotype.Service;
@@ -82,5 +81,12 @@ public class PersonServiceImpl implements PersonService {
         );
 
         return personList.isEmpty() ? new Person() : personList.get(0);
+    }
+
+    @Override
+    public List<Person> findAll() {
+        LdapQuery query = query()
+                .where("objectclass").is("person");
+        return ldapTemplate.search(query, new PersonAttributesMapper());
     }
 }

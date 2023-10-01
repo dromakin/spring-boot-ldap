@@ -10,7 +10,7 @@
  * version - 2023.09.24
  * copyright - ORGANIZATION_NAME Inc. 2023
  */
-package com.dromakin.springbootldap.models;
+package com.dromakin.springbootldap.models.ldap;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -14,7 +14,7 @@ import java.security.Principal;
 public class RestController {
     @Operation(
             summary = "Get private json from private/secured endpoint",
-            security = {@SecurityRequirement(name = SwaggerConfig.BASIC_AUTH_SECURITY_SCHEME)})
+            security = {@SecurityRequirement(name = SwaggerConfig.AUTH_SECURITY_SCHEME)})
     @GetMapping("/private")
     public PrivateJsonDTO getPrivateString(Principal principal) {
         return PrivateJsonDTO.builder().privateMsg(principal.getName() + ", it is private.").build();
